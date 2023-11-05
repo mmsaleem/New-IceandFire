@@ -22,6 +22,10 @@ function Characters() {
       });
   }, [page, pageSize]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [page])
+
   return (
     <>
      <div>
@@ -34,9 +38,9 @@ function Characters() {
       </div>
     </div>
     <ul className = "pagination">
-    <li className><button onClick={() => setPage (page => page - 1)} disabled={page === 1}>Previous Page</button></li>
+    <li className><button type="button" onClick={() => setPage (page => page - 1)} disabled={page === 1}>Previous Page</button></li>
     <li className="page-num">{page}</li>
-    <li className><button onClick={() => setPage (page => page + 1)}>Next Page</button></li>
+    <li className><button type="button" onClick={() => setPage (page => page + 1)}>Next Page</button></li>
     </ul>
     
     </>

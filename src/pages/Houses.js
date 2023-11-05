@@ -19,6 +19,11 @@ function Houses() {
         console.error(error);
       });
   }, [page, pageSize]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [page])
+  
   return (
     <>
     <div>
